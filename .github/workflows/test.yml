@@ -1,0 +1,3 @@
+jobs:
+- name: dotnet-tests-report
+  uses: zyborg/dotnet-tests-report@v1.3.0
