@@ -1,0 +1,11 @@
+name: Test
+
+on:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: dotnet-tests-report
+      uses: zyborg/dotnet-tests-report@v1.3.0
