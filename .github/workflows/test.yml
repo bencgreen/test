@@ -7,5 +7,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: dotnet-tests-report
+    - name: Output ref
       run: echo "${{ github.ref }}"
