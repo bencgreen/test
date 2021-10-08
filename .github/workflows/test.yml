@@ -1,11 +1,24 @@
 name: Test
 
+
+
 on:
+
   push:
 
+
+
 jobs:
+
   test:
+
     runs-on: ubuntu-latest
+
     steps:
+
     - name: dotnet-tests-report
-      run: echo "{{ github.refs }}"
+
+      run: echo "${{ github.refs }}"
+
+
+
