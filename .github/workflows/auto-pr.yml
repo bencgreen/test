@@ -10,6 +10,7 @@ jobs:
       name: Test
       run: |
         echo "${{ github.ref }}"
+      run: |
         echo "${{ github.ref_name }}"
     -
       if: ${{ equals(env.GITHUB_REF_TYPE, 'branch') }}
