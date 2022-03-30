@@ -10,7 +10,6 @@ jobs:
       name: Echo ref
       run: |
         echo "${{ github.ref }}"
-
     - 
       name: Echo ref_name
       run: |
@@ -19,16 +18,3 @@ jobs:
       name: Echo ref_type
       run: |
         echo "${{ github.ref_type }}"
-    -
-      if: ${{ equals(env.GITHUB_REF_TYPE, 'branch') }}
-      name: Checkout branch
-      uses: actions/checkout@v3
-      with:
-        ref: ${{ github.ref }}
-    -
-      name: Create PR
-      uses: peter-evans/create-pull-request@v4
-      with:
-        title: ${{ github.ref_name }}
-        body: "Merging branch to create ${{ github.ref_name }}"
-        branch: ${{ github.ref_name }}
