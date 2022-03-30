@@ -5,6 +5,7 @@ on:
 
 jobs:
   create-pr:
+    runs-on: ubuntu-latest
     steps:
     -
       name: Echo ref
