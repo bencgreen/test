@@ -7,11 +7,18 @@ jobs:
   create-pr:
     steps:
     -
-      name: Test
+      name: Echo ref
       run: |
         echo "${{ github.ref }}"
+
+    - 
+      name: Echo ref_name
       run: |
         echo "${{ github.ref_name }}"
+    -
+      name: Echo ref_type
+      run: |
+        echo "${{ github.ref_type }}"
     -
       if: ${{ equals(env.GITHUB_REF_TYPE, 'branch') }}
       name: Checkout branch
