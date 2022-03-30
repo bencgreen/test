@@ -9,10 +9,10 @@ jobs:
     steps:
     -
       if: ${{ github.ref_type == 'branch' }}
-      name: Checkout branch
+      name: Checkout Branch ${{ github.ref_name }}
       uses: actions/checkout@v3
     -
-      name: Create PR
+      name: Create Pull Request
       uses: repo-sync/pull-request@v2
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
