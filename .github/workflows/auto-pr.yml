@@ -7,14 +7,12 @@ jobs:
   create-pr:
     steps:
     -
-      name: Check this is a branch
-      if: ${{ equals(env.GITHUB_REF_TYPE, 'branch') }}
-    -
       name: Test
       run: |
         echo "${{ github.ref }}"
         echo "${{ github.ref_name }}"
     -
+      if: ${{ equals(env.GITHUB_REF_TYPE, 'branch') }}
       name: Checkout branch
       uses: actions/checkout@v3
       with:
