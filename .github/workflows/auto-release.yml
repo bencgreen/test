@@ -1,11 +1,11 @@
-name: auro-release
+name: auto-release
 
 on:
   pull_request:
     types: [closed]
 
 jobs:
-  create-pr:
+  create-release:
     runs-on: ubuntu-latest
     steps:
     -
@@ -15,3 +15,6 @@ jobs:
     -
       name: Create Release
       uses: softprops/action-gh-release@v1
+      with:
+        name: ${{ github.ref_name }}
+        tag_name: ${{ github.ref_name }}
