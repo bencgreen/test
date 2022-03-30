@@ -8,14 +8,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     -
-      name: Echo ref
-      run: |
-        echo "${{ github.ref }}"
-    - 
-      name: Echo ref_name
-      run: |
-        echo "${{ github.ref_name }}"
+      if: ${{ github.ref_type == 'branch' }}
+      name: Checkout branch
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.ref }}
     -
-      name: Echo ref_type
-      run: |
-        echo "${{ github.ref_type }}"
+      name: Create PR
+      uses: peter-evans/create-pull-request@v4
+      with:
+        title: ${{ github.ref_name }}
+        body: "Merging branch to create ${{ github.ref_name }}"
+        branch: ${{ github.ref_name }}
