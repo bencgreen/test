@@ -17,4 +17,5 @@ jobs:
       with:
         title: ${{ github.ref_name }}
         body: "Merging branch to create ${{ github.ref_name }}"
+        base: main
         branch: ${{ github.ref_name }}
